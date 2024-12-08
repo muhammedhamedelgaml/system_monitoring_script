@@ -1,6 +1,6 @@
 # System Monitoring Script
 
-This script monitors the system's disk usage, memory usage, CPU usage, and running processes. It sends email alerts when specific thresholds are exceeded, and logs the system's status in a log file.
+This script monitors the system's disk usage, memory usage, CPU usage, and top 5 running processes. It sends email alerts when specific thresholds are exceeded, and logs the system's status in a log file.
 
 ## Features
 
