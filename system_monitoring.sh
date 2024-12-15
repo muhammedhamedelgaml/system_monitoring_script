@@ -61,61 +61,61 @@ fi
 
 
 
-# for i in $( seq 2 $line_no ); do
-#     part=$(df -h | awk "NR==$i {print \$5}" | cut -d'%' -f1 )
-#     if [ $part -ge $disk_threshold ] ; then
-#         echo -e "\e[31m------Warning------\e[0m"  >> $file_name
-#         echo -e "chech partition ` df -h | awk "NR==$i" ` "     >> $file_name
-#         echo -e " $email_Part_content \n ` df -h | awk "NR==$i" ` "   | msmtp muhammedhamedelgaml@gmail.com
-#     fi
-# done
+for i in $( seq 2 $line_no ); do
+    part=$(df -h | awk "NR==$i {print \$5}" | cut -d'%' -f1 )
+    if [ $part -ge $disk_threshold ] ; then
+        echo -e "\e[31m------Warning------\e[0m"  >> $file_name
+        echo -e "chech partition ` df -h | awk "NR==$i" ` "     >> $file_name
+        echo -e " $email_Part_content \n ` df -h | awk "NR==$i" ` "   | msmtp muhammedhamedelgaml@gmail.com
+    fi
+done
 
 
 
-# echo "==========================================="   >> $file_name
-# echo "memory usage is"    >> $file_name
-# mem_usage=` free -th `  
-# # mem_used=`  free -th | grep "Total"  | awk '{print $3}'  `
-# mem_used=`  free -th  | awk 'NR==4 {print $3}'  `
-# mem_free=`  free -th  | awk 'NR==4 {print $4}' | cut -d'G' -f1 `
-# mem_total=`  free -th  | awk 'NR==4 {print $2}' `
-# mem_free_no=$(printf "%.0f" "$mem_free")
+echo "==========================================="   >> $file_name
+echo "memory usage is"    >> $file_name
+mem_usage=` free -th `  
+# mem_used=`  free -th | grep "Total"  | awk '{print $3}'  `
+mem_used=`  free -th  | awk 'NR==4 {print $3}'  `
+mem_free=`  free -th  | awk 'NR==4 {print $4}' | cut -d'G' -f1 `
+mem_total=`  free -th  | awk 'NR==4 {print $2}' `
+mem_free_no=$(printf "%.0f" "$mem_free")
 
-# if [ "$mem_free_no" -le  "$mem_threshold" ]; 
-#  then 
-#  echo -e "\e[31m------Warning------\e[0m"  >> $file_name
-#  echo " memory is low"   >> $file_name
-#  echo -e "$email_mem_content"  | msmtp muhammedhamedelgaml@gmail.com
-#  fi 
+if [ "$mem_free_no" -le  "$mem_threshold" ]; 
+ then 
+ echo -e "\e[31m------Warning------\e[0m"  >> $file_name
+ echo " memory is low"   >> $file_name
+ echo -e "$email_mem_content"  | msmtp muhammedhamedelgaml@gmail.com
+ fi 
 
-# echo " total memory: $mem_total"   >> $file_name
-# echo " used memory: $mem_used"    >> $file_name
-# echo " free memory: $mem_free Gi"   >> $file_name
-
-
-
-
-
-# echo "==========================================="   >> $file_name
-# echo "----------CPU usage------------"    >> $file_name
-# echo "number of CPU `nproc` "       >> $file_name
-# cpu_usage=`top -bn 1 | grep "Cpu(s)" | awk 'NR==1 {print $2} ' `
-# cpu_usage_no=$(printf "%.0f" "$cpu_usage")
-# echo "cpu usage is $cpu_usage %"     >> $file_name
-# if [ "$cpu_usage_no" -ge $cpu_thershold ];
-# then 
-# echo -e "\e[31m------Warning------\e[0m"  >> $file_name 
-# echo  " CPU is $cpu_usage % " >> $file_name
-# echo -e "$email_CPU_content"  | msmtp muhammedhamedelgaml@gmail.com
-# fi 
+echo " total memory: $mem_total"   >> $file_name
+echo " used memory: $mem_used"    >> $file_name
+echo " free memory: $mem_free Gi"   >> $file_name
 
 
 
 
-# echo "==========================================="   >> $file_name
-# echo "Top 5 Running Processes"    >> $file_name
-# top_out=$(top -bn1) 
-# for i in {7..12}; do
-#     top=$(echo "$top_out" | awk "NR==$i")
-#     echo "$top"   >> $file_name
-# done
+
+echo "==========================================="   >> $file_name
+echo "----------CPU usage------------"    >> $file_name
+echo "number of CPU `nproc` "       >> $file_name
+cpu_usage=`top -bn 1 | grep "Cpu(s)" | awk 'NR==1 {print $2} ' `
+cpu_usage_no=$(printf "%.0f" "$cpu_usage")
+echo "cpu usage is $cpu_usage %"     >> $file_name
+if [ "$cpu_usage_no" -ge $cpu_thershold ];
+then 
+echo -e "\e[31m------Warning------\e[0m"  >> $file_name 
+echo  " CPU is $cpu_usage % " >> $file_name
+echo -e "$email_CPU_content"  | msmtp muhammedhamedelgaml@gmail.com
+fi 
+
+
+
+
+echo "==========================================="   >> $file_name
+echo "Top 5 Running Processes"    >> $file_name
+top_out=$(top -bn1) 
+for i in {7..12}; do
+    top=$(echo "$top_out" | awk "NR==$i")
+    echo "$top"   >> $file_name
+done
