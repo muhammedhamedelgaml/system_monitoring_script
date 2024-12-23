@@ -48,10 +48,10 @@ tls_trust_file /etc/ssl/certs/ca-certificates.crt
 ```
 
 ## screenshots
-![EX](/screenshots/Screenshot from 2024-12-03 22-45-23.png)
-![EX](/screenshots/Screenshot from 2024-12-03 22-45-35.png)
-![EX](/screenshots/Screenshot from 2024-12-03 22-45-51.png)
-![EX](/screenshots/Screenshot from 2024-12-03 22-45-03.png)
+![EX](screenshots/Screenshot from 2024-12-03 22-45-23.png)
+![EX](screenshots/Screenshot from 2024-12-03 22-45-35.png)
+![EX](screenshots/Screenshot from 2024-12-03 22-45-51.png)
+![EX](screenshots/Screenshot from 2024-12-03 22-45-03.png)
 
 
 
