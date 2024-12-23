@@ -47,6 +47,14 @@ tls on
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
 ```
 
+## screenshots
+![EX](/screenshots/Screenshot from 2024-12-03 22-45-23.png)
+![EX](/screenshots/Screenshot from 2024-12-03 22-45-35.png)
+![EX](/screenshots/Screenshot from 2024-12-03 22-45-51.png)
+![EX](/screenshots/Screenshot from 2024-12-03 22-45-03.png)
+
+
+
 ## Usage
 
 Run the script with optional flags for customization:
