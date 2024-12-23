@@ -30,7 +30,22 @@ This script monitors the system's disk usage, memory usage, CPU usage, and top 5
     sudo apt-get install msmtp
     ```
 
-4. Configure `msmtp` with your email provider's SMTP settings. You can find details for configuring `msmtp` on your email provider's support page.
+4. Configure `msmtp` with your email provider's SMTP settings
+
+    ```bash
+    sudo cat ~/.msmtprc 
+    ```
+```    
+account default
+host smtp.gmail.com
+port 587
+from <sender>@gmail.com
+user <sender>@gmail.com
+password <TOKEN>  // create password at google don't put your email password 
+auth plain
+tls on
+tls_trust_file /etc/ssl/certs/ca-certificates.crt
+```
 
 ## Usage
 
