@@ -54,6 +54,7 @@ tls_trust_file /etc/ssl/certs/ca-certificates.crt
 ![EX4](screenshots/Screenshot%20from%202024-12-03%2022-46-03.png)
 
 ## output file EX 
+```
 ===========================================
 ===========================================
 ===========================================
@@ -95,7 +96,7 @@ Top 5 Running Processes
       3 root      20   0       0      0      0 S   0.0   0.0   0:00.00 pool_workqueue_release
       4 root       0 -20       0      0      0 I   0.0   0.0   0:00.00 kworker/R-rcu_g
 ...
-
+```
 
 ## Usage
 
